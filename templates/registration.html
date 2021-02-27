@@ -17,7 +17,7 @@
 
             <div class="col-md-4 col-sm-4 col-xm-12">
                 <h1>REGISTRATION</h1>
-                <form class="total_form" id="general_form" method="POST" data-cities-url="{% url 'ajax_load_cities' %}">
+                <form class="total_form" id="general_form" method="POST" data-cities-url="{% url 'ajax_load_teachers' %}">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-success btn-block">Submit</button>

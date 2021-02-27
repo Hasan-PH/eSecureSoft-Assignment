@@ -6,6 +6,5 @@ from . import views
 urlpatterns = [
 url(r'^$', views.registration, name='registration'),
 url(r'^list/', views.list, name='list'),
-
-path('ajax/load-teacher/', views.load_teacher, name='ajax_load_cities'), # AJAX
+path('ajax/load-teacher/', views.load_teacher, name='ajax_load_teachers'), # AJAX
 ]
