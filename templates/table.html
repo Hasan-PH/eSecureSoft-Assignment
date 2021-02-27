@@ -1,0 +1,69 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link type ="text/css" rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Age</th>
+                <th scope="col">School</th>
+                <th scope="col">Teacher</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in stu_teacher_obj %}
+                <tr>
+                    <th>{{ forloop.counter }}</th>
+                    <td>{{ obj.student_name.name }}</td>
+                    <td>{{ obj.student_name.gender }}</td>
+                    {% if obj.student_name.age == None %}
+                        <td></td>
+                    {% else %}
+                        <td>{{ obj.student_name.age }}</td>
+                    {% endif %}
+                    <td>{{ obj.school_teacher_name.school_name.name }}</td>
+                    <td>{{ obj.school_teacher_name.teacher_name.name }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+
+    <div class="pagination">
+        <table border="1">
+                <tr>
+                    {% if stu_teacher_obj.has_previous %}
+                        <td><a href="?page=1"><< First</a></td>
+                        <td><a href="?page={{ stu_teacher_obj.previous_page_number }}">   <   </a></td>
+                    {% endif %}
+                    <td>{{ stu_teacher_obj.number }}</td>
+                    {% if stu_teacher_obj.has_next %}
+                        <td><a href="?page={{ stu_teacher_obj.next_page_number }}">   >   </a></td>
+                        <td><a href="?page={{ stu_teacher_obj.paginator.num_pages }}">Last >></a></td>
+                    {% endif %}
+
+                </tr>
+
+        </table>
+    </div>
+
+
+    </div>
+
+
+</body>
+</html>
