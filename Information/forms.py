@@ -32,9 +32,9 @@ class TestForm(forms.Form):
     subject1 = forms.ModelChoiceField(label="Subject 1 *", queryset=Subject.objects.only("name"),
                                      widget=forms.Select(attrs={'class': 'regDropDown'}))
 
-    # subject2 = forms.ModelChoiceField(label="Subject 2", queryset=Subject.objects.only("name"),
-    #                                  widget=forms.Select(attrs={'class': 'regDropDown'}), required=False)
-    #
-    # subject3 = forms.ModelChoiceField(label="Subject 3", queryset=Subject.objects.only("name"),
-    #                                  widget=forms.Select(attrs={'class': 'regDropDown'}), required=False)
+    subject2 = forms.ModelChoiceField(label="Subject 2", queryset=Subject.objects.only("name"),
+                                     widget=forms.Select(attrs={'class': 'regDropDown'}), required=False)
+
+    subject3 = forms.ModelChoiceField(label="Subject 3", queryset=Subject.objects.only("name"),
+                                     widget=forms.Select(attrs={'class': 'regDropDown'}), required=False)
 

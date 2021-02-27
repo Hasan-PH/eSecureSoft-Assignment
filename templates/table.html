@@ -12,6 +12,15 @@
 
 
     <div class="container">
+        <h1>Student List Page</h1>
+
+        {#                <form method="POST" class="form submitting">{% csrf_token %}#}
+{#                    <input id="foo" name="med_id" value='{{ obj.id }}'/>#}
+{#                    <button type="submit" class="btn btn-success">Add to Cart</button>#}
+{#                </form>#}
+                <form action="{% url 'list' %}" method="get">
+                    <input name="q" type="text" placeholder="Search student name here...">
+                </form>
 
         <table class="table table-striped">
             <thead>
